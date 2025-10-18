@@ -12,6 +12,8 @@
     - [x] True
     - [ ] False
     
+    The value of tanh: -1 ~ +1
+    
     Note: You can check [this post](https://stats.stackexchange.com/a/101563/169377) and (this paper)[http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf].
     
     > As seen in lecture the output of the tanh is between -1 and 1, it thus centers the data which makes the learning simpler for the next layer.
@@ -38,12 +40,14 @@
     A = np.random.randn(4,3)
     B = np.sum(A, axis = 1, keepdims = True)
     ```
-    
+
     What will be B.shape?
-    
+
     `B.shape = (4, 1)`
-    
+
     >  we use (keepdims = True) to make sure that A.shape is (4,1) and not (4, ). It makes our code more rigorous.
+
+    Axis = 1 means sum the matrix horizontally, keepdims forces Python return (4, 1) not (4, )
 
 6. Suppose you have built a neural network. You decide to initialize the weights and biases to be zero. Which of the following statements are True? (Check all that apply)
 
@@ -71,18 +75,38 @@
 
 
     > tanh becomes flat for large values, this leads its gradient to be close to zero. This slows down the optimization algorithm.
-    
+
+No matter tanh or sigmoid, both of them show flat outputs when input very large or very small, that doesn't help gradient descent. 
+
 9. Consider the following 1 hidden layer neural network:
 
     - b[1] will have shape (4, 1)
     - W[1] will have shape (4, 2)
     - W[2] will have shape (1, 4)
     - b[2] will have shape (1, 1)
-    
+
     Note: Check [here](https://user-images.githubusercontent.com/14886380/29200515-7fdd1548-7e88-11e7-9d05-0878fe96bcfa.png) for general formulas to do this.
-    
+
+    W1.shape = (4, 2)
+
+    B1.shape = (4, 1)
+
+    W2.shape = (1, 4)
+
+    B2.shape = (1, 1)
+
 10. In the same network as the previous question, what are the dimensions of Z^[1] and A^[1]?
 
     - Z[1] and A[1] are (4,m)
-    
+
     Note: Check [here](https://user-images.githubusercontent.com/14886380/29200515-7fdd1548-7e88-11e7-9d05-0878fe96bcfa.png) for general formulas to do this.
+
+    Z[1] = W[1]*X + b1
+
+    A[1] = g(Z[1])
+
+    X.shape = (2, m)
+
+    Z[1].shape = (4, m)
+
+    A[1].shape = ()
