@@ -9,6 +9,8 @@
 
     > the "cache" records values from the forward propagation units and sends it to the backward propagation units because it is needed to compute the chain rule derivatives.
 
+    For example, store Zn An into cache.
+
 2. Among the following, which ones are "hyperparameters"? (Check all that apply.) **I only list correct options.**
 
     - size of the hidden layers n^[l]
@@ -18,13 +20,17 @@
 
     Note: You can check [this Quora post](https://www.quora.com/What-are-hyperparameters-in-machine-learning) or [this blog post](http://colinraffel.com/wiki/neural_network_hyperparameters).
     
+    And also activation function, neurons 
+    
 3. Which of the following statements is true?
 
     - [x] The deeper layers of a neural network are typically computing more complex features of the input than the earlier layers.
-Correct 
+    Correct 
     - [ ] The earlier layers of a neural network are typically computing more complex features of the input than the deeper layers.
-    
+
     Note: You can check the lecture videos. I think Andrew used a CNN example to explain this.
+
+    Earlier layers describe basic features, deeper layers describe complex features 
 
 4. Vectorization allows you to compute forward propagation in an L-layer neural network without an explicit for-loop (or any other explicit iterative loop) over the layers l=1, 2, …,L. True/False?
 
@@ -56,6 +62,8 @@ Correct
     
     > During backpropagation you need to know which activation was used in the forward propagation to be able to compute the correct derivative.
     
+    g'(A[l])
+    
 8. There are certain functions with the following properties:
 
     (i) To compute the function using a shallow network circuit, you will need a large network (where we measure size by the number of logic gates in the network), but (ii) To compute it using a deep network circuit, you need only an exponentially smaller network. True/False?
@@ -78,9 +86,10 @@ Correct
     
     Note: See [this image](https://user-images.githubusercontent.com/14886380/29200515-7fdd1548-7e88-11e7-9d05-0878fe96bcfa.png) for general formulas.
     
-    
 10. Whereas the previous question used a specific network, in the general case what is the dimension of W^[l], the weight matrix associated with layer l?
 
     - W^[l] has shape (n^[l],n^[l−1])
     
     Note: See [this image](https://user-images.githubusercontent.com/14886380/29200515-7fdd1548-7e88-11e7-9d05-0878fe96bcfa.png) for general formulas.
+    
+    - b^[l] has shape(n^[l], 1)
