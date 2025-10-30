@@ -47,12 +47,18 @@
     - Reducing the regularization effect
     - Causing the neural network to end up with a lower training set error
     
+    Bigger keep_prob makes model keeps more nodes
+    
 9. Which of these techniques are useful for reducing variance (reducing overfitting)? (Check all that apply.)
 
     - Dropout
     - L2 regularization
     - Data augmentation
 
+    More data or less nodes
+
 10. Why do we normalize the inputs x?
 
     - It makes the cost function faster to optimize
+    
+    Easy to do gradient decent because of same descent speed in all parameters
