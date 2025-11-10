@@ -35,6 +35,8 @@
     
     - v_2 = 7.5, v^corrected_2 = 10
     
+    v^corrected = v_t / (1 - β^t) -> v_corrected_2 = 7.5 / (1 - 0.5^2) = 10 
+    
 6. Which of these is NOT a good learning rate decay scheme? Here, t is the epoch number.
 
     - α = e^t * α_0
@@ -44,13 +46,17 @@
 7. You use an exponentially weighted average on the London temperature dataset. You use the following to track the temperature: v_t = βv_t−1 + (1 − β)θ_t. The red line below was computed using β = 0.9. What would happen to your red curve as you vary β? (Check the two that apply)
 
     - Increasing β will shift the red line slightly to the right.
+      - Previous data contribute more makes data delay in the line
     - Decreasing β will create more oscillation within the red line.
+      - Previous data contribute less keeps more oscillation
     
 8. Consider this figure:
 
     These plots were generated with gradient descent; with gradient descent with momentum (β = 0.5) and gradient descent with momentum (β = 0.9). Which curve corresponds to which algorithm?
 
     (1) is gradient descent. (2) is gradient descent with momentum (small β). (3) is gradient descent with momentum (large β)
+
+    The larger the β the smoother the curve 
 
 9. Suppose batch gradient descent in a deep network is taking excessively long to find a value of the parameters that achieves a small value for the cost function J(W[1],b[1],...,W[L],b[L]). Which of the following techniques could help find parameter values that attain a small value forJ? (Check all that apply)
 
