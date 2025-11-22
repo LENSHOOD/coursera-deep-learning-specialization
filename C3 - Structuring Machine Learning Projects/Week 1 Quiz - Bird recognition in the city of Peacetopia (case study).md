@@ -5,11 +5,15 @@
     - [x] True
     - [ ] False
 
+    The 3 requirements are in three different optimize directions
+
 2. If you had the three following models, which one would you choose?
 
     - Test Accuracy	98% 
     - Runtime 9 sec	
     - Memory size 9MB
+
+    Best accuracy without break other two limitations.
 
 3. Based on the city’s requests, which of the following would you say is true?
 
@@ -24,6 +28,8 @@
     - Dev 250,000
     - Test 250,000
 
+    Two many examples in dev and test sets are not necessary
+
 5. After setting up your train/dev/test sets, the City Council comes across another 1,000,000 images, called the “citizens’ data”. Apparently the citizens of Peacetopia are so scared of birds that they volunteered to take pictures of the sky and label them, thus contributing these additional 1,000,000 images. These images are different from the distribution of images the City Council had originally given you, but you think it could help your algorithm.
 
 	  You should not add the citizens’ data to the training set, because this will cause the training and dev/test set distributions to become different, thus hurting dev and test set performance. True/False?
@@ -37,6 +43,8 @@
 
     - The test set no longer reflects the distribution of data (security cameras) you most care about.
     - This would cause the dev and test set distributions to become different. This is a bad idea because you’re not aiming where you want to hit.
+
+    The distribution of dev and test sets should be the same
 
 7. You train a system, and its errors are as follows (error = 100%-Accuracy):
 	
@@ -75,15 +83,17 @@
 
 11. You also evaluate your model on the test set, and find the following:
 
-    - Human-level performance	0.1%
-    - Training set error	2.0%
-    - Dev set error	2.1%
-    - Test set error	7.0%
+      - Human-level performance	0.1%
+      - Training set error	2.0%
+      - Dev set error	2.1%
+      - Test set error	7.0%
 
-    What does this mean? (Check the two best options.)
+      What does this mean? (Check the two best options.)
 
-    - You should try to get a bigger dev set.
-    - You have overfit to the dev set.
+      - You should try to get a bigger dev set.
+      - You have overfit to the dev set.
+
+       Bigger dev test is helpful for overfitting conformation and helpful for tuning
 
 12. After working on this project for a year, you finally achieve:
 
