@@ -46,6 +46,8 @@
     
     > As seen in lecture, it is important that your dev and test set have the closest possible distribution to “real”-data. It is also important for the training set to contain enough “real”-data to avoid having a data-mismatch problem.
     
+    Dev test data should have similar distribution.
+    
 6. Assume you’ve finally chosen the following split between of the data:
 
     - Training	940,000 images randomly picked from (900,000 internet images + 60,000 car’s front-facing camera images)	8.8%
@@ -57,6 +59,8 @@
     
     - You have a large avoidable-bias problem because your training error is quite a bit higher than the human-level error.
     - You have a large data-mismatch problem because your model does a lot better on the training-dev set than on the dev set.
+    
+    Big gap between training-dev and dev indicates data mismatch, error rate is too high means underfitting
     
 7. Based on table from the previous question, a friend thinks that the training data distribution is much easier than the dev/test distribution. What do you think?
 
@@ -130,13 +134,16 @@
     
     - (B) In this two-step approach, you would first (i) detect the traffic light in the image (if any), then (ii) determine the color of the illuminated lamp in the traffic light.
     Between these two, Approach B is more of an end-to-end approach because it has distinct steps for the input end and the output end. True/False?
-
-
+    
+    
     - [ ] True
+    
+    
     - [x] False
+      
+        >  (A) is an end-to-end approach as it maps directly the input (x) to the output (y).
     
-    >  (A) is an end-to-end approach as it maps directly the input (x) to the output (y).
-    
+
 15. Approach A (in the question above) tends to be more promising than approach B if you have a ________ (fill in the blank).
 
     - [x] Large training set
