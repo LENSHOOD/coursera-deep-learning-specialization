@@ -4,79 +4,95 @@
 
 1. What do you think applying this filter to a grayscale image will do?
 
-	- Detect horizontal edges
+  - Detect horizontal edges
 
-	- > Detect vertical edges
+  - > Detect vertical edges
 
-	- Detect 45 degree edges
+  - Detect 45 degree edges
 
-	- Detect image contrast
+  - Detect image contrast
+
+  The matrix demonstrates vertical detection characteristics as the first 2 columns are have different sign compare to the last 2 columns
 
 2. Suppose your input is a 300 by 300 color (RGB) image, and you are not using a convolutional network. If the first hidden layer has 100 neurons, each one fully connected to the input, how many parameters does this hidden layer have (including the bias parameters)?
 
-	- 9,000,001
+  - 9,000,001
 
-	- 9,000,100
+  - 9,000,100
 
-	- 27,000,001
+  - 27,000,001
 
-	- > 27,000,100
+  - > 27,000,100
+
+  weights = 300 * 300 * 3 * 10 * 10; bias = 100, total = 27000100
 
 3. Suppose your input is a 300 by 300 color (RGB) image, and you use a convolutional layer with 100 filters that are each 5x5. How many parameters does this hidden layer have (including the bias parameters)?
 
-	- 2501
+  - 2501
 
-	- 2600
+  - 2600
 
-	- 7500
+  - 7500
 
-	- > 7600
+  - > 7600
+
+  1filter size = 5 * 5 * 3 = 75, 1 filter with 1 bias = 75 + 1 = 76, 100 filters in total = 76 * 100 = 7600
 
 4. You have an input volume that is 63x63x16, and convolve it with 32 filters that are each 7x7, using a stride of 2 and no padding. What is the output volume?
 
-	16x16x32
+  16x16x32
 
-	29x29x16
+  29x29x16
 
-	> 29x29x32
+  > 29x29x32
 
-	16x16x16
+  16x16x16
+
+  ((N - f + 2p) / s) + 1 = ((63 - 7 + 0) / 2) + 1 = 29, 32 filters = 29x29x32
 
 5. You have an input volume that is 15x15x8, and pad it using “pad=2.” What is the dimension of the resulting volume (after padding)?
 
-	19x19x12
+  19x19x12
 
-	17x17x10
+  17x17x10
 
-	> 19x19x8
+  > 19x19x8
 
-	17x17x8
+  17x17x8
+
+  N + 2P = 19
 
 6. You have an input volume that is 63x63x16, and convolve it with 32 filters that are each 7x7, and stride of 1. You want to use a “same” convolution. What is the padding?
 
-	1
+  1
 
-	2
+  2
 
-	> 3
+  > 3
 
-	7
+  7
+
+  ((N - f + 2p) / s) + 1 = ((63 - 7 + 2P) / 1) + 1 = 63, P = 3
 
 7. You have an input volume that is 32x32x16, and apply max pooling with a stride of 2 and a filter size of 2. What is the output volume?
 
-	15x15x16
+  15x15x16
 
-	> 16x16x16
+  > 16x16x16
 
-	32x32x8
+  32x32x8
 
-	16x16x8
+  16x16x8
+
+  ((N - f + 2p) / s) + 1 = ((32 -2 + 0) / 2) + 1 = 16
 
 8. Because pooling layers do not have parameters, they do not affect the backpropagation (derivatives) calculation.
 
-	True
+  True
 
-	> False
+  > False
+
+  pooling layer delivers the gradient when do calculations
 
 9. In lecture we talked about “parameter sharing” as a benefit of using convolutional networks. Which of the following statements about parameter sharing in ConvNets are true? (Check all that apply.)
 
@@ -122,5 +138,4 @@
       	> Depends on the green square
 
 22.
-
 
