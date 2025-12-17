@@ -96,35 +96,45 @@
 
 9. In lecture we talked about “parameter sharing” as a benefit of using convolutional networks. Which of the following statements about parameter sharing in ConvNets are true? (Check all that apply.)
 
-	It allows parameters learned for one task to be shared even for a different task (transfer learning).
+  It allows parameters learned for one task to be shared even for a different task (transfer learning).
 
-	> It reduces the total number of parameters, thus reducing overfitting.
+  > It reduces the total number of parameters, thus reducing overfitting.
+  >
+  > Explanation: the number of filter parameters is way less than full connection.  
 
-	It allows gradient descent to set many of the parameters to zero, thus making the connections sparse.
+  It allows gradient descent to set many of the parameters to zero, thus making the connections sparse.
 
-	> It allows a feature detector to be used in multiple locations throughout the whole input image/input volume.
+  > It allows a feature detector to be used in multiple locations throughout the whole input image/input volume.
+  >
+  > Explanation: one filter can be performed to different locations of the whole image.
 
 10. In lecture we talked about “sparsity of connections” as a benefit of using convolutional layers. What does this mean?
 
-	Each filter is connected to every channel in the previous layer.
+    Each filter is connected to every channel in the previous layer.
 
-	> Each activation in the next layer depends on only a small number of activations from the previous layer.
+    > Each activation in the next layer depends on only a small number of activations from the previous layer.
+    >
+    > Explanation: one neuron only connects a few part of inputs
 
-	Each layer in a convolutional network is connected only to two other layers
+    Each layer in a convolutional network is connected only to two other layers
 
-	Regularization causes gradient descent to set many of the parameters to zero.
+    Regularization causes gradient descent to set many of the parameters to zero.
 
 11. Suppose your input is a 256 by 256 grayscale image, and you use a convolutional layer with 128 filters that are each 3×3. How many parameters does this hidden layer have (including the bias parameters)?
 
  	> 1280
+ 	3*3*128 + 128 = 1280
 
 13. You have an input volume that is 127×127×16, and convolve it with 32 filters of 5×5, using a stride of 2 and no padding. What is the output volume?
 
   	> 62 x 62 x 32
+  	((N - F + 2P) / S) + 1 = (127-5+0)/2 + 1 = 62
+  	with 32 filters, 62 * 62 * 32
 
 15. You have an input volume that is 31x31x32, and pad it using “pad=1”. What is the dimension of the resulting volume (after padding)?
 
   	> 33 x 33 x 32
+  	31 + 1*2 = 33, 33*33*32
 
 17. Which of the following are hyperparameters of the pooling layers?
 
